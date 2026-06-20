@@ -88,21 +88,24 @@
   a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px;}
   strong{font-weight:600;}
   hr{border:none;border-top:1px solid var(--line);margin:2.5rem 0;}
-  .table-scroll{overflow-x:auto;margin:1rem 0;}
-  table{
-    border-collapse:collapse;
-    width:100%;
-    font-size:.95rem;
+  .perm-list{margin:1rem 0;display:flex;flex-direction:column;gap:.6rem;}
+  .perm-item{
     background:var(--card);
-  }
-  caption{text-align:left;color:var(--muted);font-size:.88rem;padding-bottom:.5rem;}
-  th,td{
-    text-align:left;
-    padding:.7rem .85rem;
     border:1px solid var(--line);
-    vertical-align:top;
+    border-radius:8px;
+    padding:.75rem 1rem;
   }
-  thead th{background:var(--accent-soft);font-weight:600;}
+  .perm-name{
+    font-weight:600;
+    font-size:.92rem;
+    color:var(--ink);
+    margin-bottom:.3rem;
+  }
+  .perm-desc{
+    font-size:.9rem;
+    color:var(--muted);
+    line-height:1.6;
+  }
   .contact{
     background:var(--card);
     border:1px solid var(--line);
@@ -175,21 +178,35 @@
 
     <h2><span class="num">3.</span>권한 사용 목적</h2>
     <p>앱이 요청하는 Android 권한과 목적은 다음과 같습니다.</p>
-    <div class="table-scroll">
-      <table>
-        <thead>
-          <tr><th scope="col">권한</th><th scope="col">목적</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>인터넷 접근 (INTERNET)</td><td>광고 로드 및 표시 (AdMob)</td></tr>
-          <tr><td>오디오 설정 변경 (MODIFY_AUDIO_SETTINGS)</td><td>오디오 라이브러리(expo-audio)에 의해 자동 추가되는 권한으로, 효과음 재생에 사용됩니다.</td></tr>
-          <tr><td>오디오 녹음 (RECORD_AUDIO)</td><td>오디오 라이브러리(expo-audio)에 의해 자동 추가되는 권한입니다. 본 앱은 마이크를 통한 녹음 기능을 사용하지 않습니다.</td></tr>
-          <tr><td>포그라운드 서비스 (FOREGROUND_SERVICE)</td><td>앱 실행 중 효과음 재생 유지</td></tr>
-          <tr><td>미디어 재생 서비스 (FOREGROUND_SERVICE_MEDIA_PLAYBACK)</td><td>효과음 재생</td></tr>
-          <tr><td>진동 (VIBRATE)</td><td>진동 피드백 기능</td></tr>
-          <tr><td>광고 ID (com.google.android.gms.permission.AD_ID)</td><td>AdMob 광고 게재</td></tr>
-        </tbody>
-      </table>
+    <div class="perm-list">
+      <div class="perm-item">
+        <div class="perm-name">인터넷 접근 (INTERNET)</div>
+        <div class="perm-desc">광고 로드 및 표시 (AdMob)</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">오디오 설정 변경 (MODIFY_AUDIO_SETTINGS)</div>
+        <div class="perm-desc">오디오 라이브러리(expo-audio)에 의해 자동 추가되는 권한으로, 효과음 재생에 사용됩니다.</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">오디오 녹음 (RECORD_AUDIO)</div>
+        <div class="perm-desc">오디오 라이브러리(expo-audio)에 의해 자동 추가되는 권한입니다. 본 앱은 마이크를 통한 녹음 기능을 사용하지 않습니다.</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">포그라운드 서비스 (FOREGROUND_SERVICE)</div>
+        <div class="perm-desc">앱 실행 중 효과음 재생 유지</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">미디어 재생 서비스 (FOREGROUND_SERVICE_MEDIA_PLAYBACK)</div>
+        <div class="perm-desc">효과음 재생</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">진동 (VIBRATE)</div>
+        <div class="perm-desc">진동 피드백 기능</div>
+      </div>
+      <div class="perm-item">
+        <div class="perm-name">광고 ID (com.google.android.gms.permission.AD_ID)</div>
+        <div class="perm-desc">AdMob 광고 게재</div>
+      </div>
     </div>
     <p>본 앱은 카메라, 연락처, 정밀 위치 권한을 요청하지 않습니다.</p>
 
